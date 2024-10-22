@@ -6,6 +6,7 @@ import os
 os.system('pyinstaller --onefile --distpath "." ten_math_functions.py')
 os.system('rmdir /s /q "build"')
 os.system('rmdir /s /q "dist"')
+os.system('rmdir /s /q "__pycache__"')
 os.remove('ten_math_functions.spec')
 os.system('cls')
 
