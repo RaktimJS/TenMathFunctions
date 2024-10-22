@@ -1,9 +1,12 @@
-import os
 import mymodule
 import time
 from mymodule import pswrd as isPasswordCorrect
+import os
 
-os.system('pyinstaller --onefile ten_math_functions.py')
+os.system('pyinstaller --onefile --distpath "." ten_math_functions.py')
+os.system('rmdir /s /q "build"')
+os.system('rmdir /s /q "dist"')
+os.remove('ten_math_functions.spec')
 os.system('cls')
 
 
@@ -36,6 +39,8 @@ def main():
         listSelector = input("\nEnter your selection (0-10 only): ")
 
         if listSelector == '0':
+                print("")
+
                 mymodule.description()
 
                 print("\n------------\n")
@@ -52,8 +57,8 @@ def main():
                 try:
                         input1 = int(input("\nEnter a number: "))
                         mymodule.factorial(input1)
-                except ValueError:
-                        print("Invalid input")
+                # except ValueError:
+                        # print("Invalid input")
                 except EOFError:
                         print("Invalid Input.")
 
@@ -110,12 +115,10 @@ def main():
                 print("\n------------\n")
 
                 try:
-                        input1 = int(input("\nEnter a number: "))
+                        input1 = input("\nEnter a number/text: ")
                         mymodule.isPalindrome(input1)
                 except ValueError:
                         print("Invalid input")
-                except EOFError:
-                        print("Invalid Input.")
 
                 print("\n------------\n")
                 

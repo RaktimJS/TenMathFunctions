@@ -113,15 +113,16 @@ def reverse(num):
 # Palindrome checker function
 def isPalindrome(num):
         placeholder = num
-        revNum = 0
+        num = num.lower()
+        revStr = ""
 
-        while num > 0:
-                revNum = (10*revNum) + (num % 10)
-                num = math.floor(num/10)
+        for i in num:
+                revStr = i + revStr
 
-        if placeholder == revNum:
-                print(f"\nYes! {placeholder} is palindrome")
-        else: print(f"\nNo! {placeholder} is not palindrome")
+        if placeholder.lower() == revStr:
+                print(f"\nYes! {placeholder.upper()} is palindrome")
+        else:
+                print(f"\nNo! {placeholder.upper()} is not palindrome")
 
 
 # Armstrong number checker function
