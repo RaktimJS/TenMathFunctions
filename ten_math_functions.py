@@ -1,17 +1,13 @@
 import mymodule
 import time
+import pack
+
 from mymodule import pswrd as isPasswordCorrect
-import os
+from os import system as system
+from os import remove as remove
 
-os.system('pyinstaller --onefile --distpath "." ten_math_functions.py')
-os.system('rmdir /s /q "build"')
-os.system('rmdir /s /q "dist"')
-os.system('rmdir /s /q "__pycache__"')
-os.remove('ten_math_functions.spec')
-os.system('cls')
-
-
-
+pack.pack('ten_math_functions.py', True)
+system('cls')
 
 def timer(s):
         while s: 
@@ -48,7 +44,7 @@ def main():
 
                 cls = input("\nPress ENTER to clear the screen ")
 
-                os.system('cls')
+                system('cls')
                 main()
         elif listSelector == '1':
                 print("You selected OPTION 1")
@@ -58,8 +54,8 @@ def main():
                 try:
                         input1 = int(input("\nEnter a number: "))
                         mymodule.factorial(input1)
-                # except ValueError:
-                        # print("Invalid input")
+                except ValueError:
+                        print("Invalid input")
                 except EOFError:
                         print("Invalid Input.")
 
@@ -209,7 +205,7 @@ def main():
         continuationSelector = input("Do you want to continue? (1-YES, 0-NO): ")
 
         if continuationSelector == '1':
-                os.system('cls')
+                system('cls')
 
                 print("Hello! Welcome!")
                 print("What would you like to try?\n")
@@ -239,7 +235,7 @@ while attemptCounter > 0:
                 attemptCounter = 0
 
                 a = input("\nAccess granted! Press ENTER to continue")
-                os.system('cls')
+                system('cls')
 
                 print("Hello! Welcome!")
                 print("What would you like to try?\n")

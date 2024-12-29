@@ -66,10 +66,10 @@ def isPrime(num):
         counter = 3
         isPrime_Var = True
 
-        if num % 2 == 0 or num <= 0 or num == 1:
-                isPrime_Var = False
-        elif num == 2:
+        if num == 2:
                 isPrime_Var = True
+        elif num % 2 == 0 or num <= 0 or num == 1:
+                isPrime_Var = False
         else:
                 while counter < num**(0.5):
                         if num % counter == 0:
